@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+body{
+  font-family: 'Righteous', cursive;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +41,36 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* navbar */
+
+.navbar{
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgba(1,243,35,255);
+}
+.navbar a{
+  margin: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+/* footer */
+
+.footer {
+  background-color: rgba(1,243,35,255);
+}
+
+.footer_idiomas{
+  align-items: center;
+}
+
+.footer_idiomas a{
+  text-decoration: none;
+  color: black;
+}
+.footer_copyright{
+  font-size: 10px;
+  padding: 0.25rem 0;
 }
