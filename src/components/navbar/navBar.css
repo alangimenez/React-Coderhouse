@@ -1,0 +1,10 @@
+.navbar{
+    display: flex;
+    justify-content: flex-end !important;
+    background-color: rgba(1,243,35,255);
+  }
+  .navbar a{
+    margin: 1rem;
+    text-decoration: none;
+    color: black;
+  }

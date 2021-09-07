@@ -1,0 +1,10 @@
+.container-manual{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.card-manual{
+    width:  27%;
+    margin: 3%;
+    padding: 3%;
+}

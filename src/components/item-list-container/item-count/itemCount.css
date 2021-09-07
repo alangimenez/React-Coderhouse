@@ -1,0 +1,8 @@
+.botonera{
+    display: flex;
+    justify-content: center;
+}
+.botonera input {
+    width: 50%;
+    text-align: center;
+}

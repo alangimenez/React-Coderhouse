@@ -1,0 +1,16 @@
+.footer {
+    background-color: rgba(1,243,35,255);
+  }
+  
+  .footer_idiomas{
+    align-items: center;
+  }
+  
+  .footer_idiomas a{
+    text-decoration: none;
+    color: black;
+  }
+  .footer_copyright{
+    font-size: 10px;
+    padding: 0.25rem 0;
+  }
