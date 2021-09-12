@@ -9,17 +9,39 @@ import "bootstrap/dist/css/bootstrap.css"
 import "./itemListContainer.css"
 import ItemCount from "./item-count/ItemCount.js"
 
-function ItemListContainer({name}) {
-    let libros = [nefBegginer, nefElementary, nefPreIntermediate, nefIntermediate, nefUpperIntermediate, nefAdvanced]
+function ItemListContainer({ name }) {
+    let libros = [
+        {
+            ruta: nefBegginer,
+            stock: 15,
+        },
+        {
+            ruta: nefElementary,
+            stock: 12,
+        },
+        {
+            ruta: nefPreIntermediate,
+            stock: 11,
+        }, {
+            ruta: nefIntermediate,
+            stock: 18,
+        }, {
+            ruta: nefUpperIntermediate,
+            stock: 9
+        }, {
+            ruta: nefAdvanced,
+            stock: 8,
+        },
+    ]
     return (
         <div className="container-manual">
             {
                 libros.map((letra) =>
                     <div className="card card-manual">
-                        <img className="card-img-top" src={letra} alt="Card image cap" />
+                        <img className="card-img-top" src={letra.ruta} alt="Card image cap" />
                         <div className="card-body">
                             <h5 className="card-title">{name}</h5>
-                            <ItemCount/>
+                            <ItemCount stock={letra.stock} initial={1} />
                         </div>
                     </div>
                 )

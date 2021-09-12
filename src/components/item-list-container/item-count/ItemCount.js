@@ -1,22 +1,39 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import "./itemCount.css"
 
-function ItemCount () {
-    const [valor, setValor] = useState(0)
+function ItemCount({ stock, initial }) {
+    const [valor, setValor] = useState(initial)
+    const [carrito, setCarrito] = useState(0)
+    const [stockLibro, setStockLibro] = useState(stock)
     const Aumentar = () => {
-        setValor(valor+1)
+        if (valor == stockLibro) {
+            return
+        } else {
+            setValor(valor + 1)
+        }
     }
     const Disminuir = () => {
-        setValor(valor-1)
+        if (valor == 0) {
+            return
+        } else {
+            setValor(valor - 1)
+        }
     }
-    const stockLibros = []
+    const onAdd = () => {
+        if (stockLibro > 0) {
+            setCarrito(carrito + valor)
+            setStockLibro(stockLibro - valor)
+        }
+    }
     return (
         <div className="botonera">
             <button onClick={Disminuir}>-</button>
             <input value={valor} />
             <button onClick={Aumentar}>+</button>
-            <br/>
-            <p>Stock disponible: </p>
+            <br />
+            <p>Stock disponible: {stockLibro}</p>
+            <input type="submit" onClick={onAdd} />
+            <p>Cantidad en carrito: {carrito}</p>
         </div>
     )
 }
