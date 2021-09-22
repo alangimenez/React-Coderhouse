@@ -22,12 +22,13 @@ const libros = [
 //funcion que tiene la promise con 2s de retraso
 function obtenerLibros() {
     return new Promise((resolve, reject) => {
-        setTimeout(() => resolve(libros), 5000)
+        setTimeout(() => resolve(libros), 2000)
     })
 }
 
 function ItemListContainer() {
     const [listaLibros, setListaLibros] = useState([])
+
     useEffect(() => {
         const listado = obtenerLibros()
         listado.then(dato => {
