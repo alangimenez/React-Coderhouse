@@ -11,12 +11,12 @@ import ItemList from "./item-list/ItemList"
 
 //array de objetos con los datos de cada libro
 const libros = [
-    { ruta: nefBegginer, stock: 15, name: "NEF Beginner" },
-    { ruta: nefElementary, stock: 12, name: "NEF Elementary" },
-    { ruta: nefPreIntermediate, stock: 11, name: "NEF PreIntermediate" },
-    { ruta: nefIntermediate, stock: 18, name: "NEF Intermediate" },
-    { ruta: nefUpperIntermediate, stock: 9, name: "NEF UpperIntermediate" },
-    { ruta: nefAdvanced, stock: 8, name: "NEF Advanced" },
+    { idioma: "ingles", ruta: nefBegginer, stock: 15, name: "NEF Beginner" },
+    { idioma: "ingles", ruta: nefElementary, stock: 12, name: "NEF Elementary" },
+    { idioma: "ingles", ruta: nefPreIntermediate, stock: 11, name: "NEF PreIntermediate" },
+    { idioma: "ruso", ruta: nefIntermediate, stock: 18, name: "NEF Intermediate" },
+    { idioma: "ruso", ruta: nefUpperIntermediate, stock: 9, name: "NEF UpperIntermediate" },
+    { idioma: "ruso", ruta: nefAdvanced, stock: 8, name: "NEF Advanced" },
 ]
 
 //funcion que tiene la promise con 2s de retraso

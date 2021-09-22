@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import "./itemCount.css"
+import {Link} from 'react-router-dom'
 
 function ItemCount({ stock, initial }) {
     const [valor, setValor] = useState(initial)
@@ -30,6 +31,7 @@ function ItemCount({ stock, initial }) {
             <button onClick={Disminuir}>-</button>
             <input value={valor} />
             <button onClick={Aumentar}>+</button>
+            <Link to="/libros/producto" activeClassName="navlink" className="Option"><button>Ver detalle del producto</button></Link>
             <br />
             <p>Stock disponible: {stockLibro}</p>
             <input type="submit" onClick={onAdd} />

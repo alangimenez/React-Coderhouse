@@ -2,6 +2,10 @@ import Item from "./item/Item"
 import ItemCount from "../item-count/ItemCount"
 
 function ItemList({ ruta, stock, name }) {
+    if(!ruta) {
+        return <div>Loading</div>
+    }
+
     return (
         <div className="card card-manual">
             <Item ruta={ruta} name={name} />
