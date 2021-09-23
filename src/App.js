@@ -38,6 +38,9 @@ function App() {
           <Route exact path="/libros/:idioma">
             <ItemListContainerFilter />
           </Route>
+          <Route path="/libros/particular/:book">
+            <ItemDetailContainer />
+          </Route>
         </Switch>
         <Footer></Footer>
       </div>

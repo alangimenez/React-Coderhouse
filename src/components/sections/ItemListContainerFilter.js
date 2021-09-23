@@ -12,12 +12,12 @@ import { useParams } from "react-router"
 
 //array de objetos con los datos de cada libro
 const libros = [
-    { idioma: "ingles", ruta: nefBegginer, stock: 15, name: "NEF Beginner" },
-    { idioma: "ingles", ruta: nefElementary, stock: 12, name: "NEF Elementary" },
-    { idioma: "ingles", ruta: nefPreIntermediate, stock: 11, name: "NEF PreIntermediate" },
-    { idioma: "ruso", ruta: nefIntermediate, stock: 18, name: "NEF Intermediate" },
-    { idioma: "ruso", ruta: nefUpperIntermediate, stock: 9, name: "NEF UpperIntermediate" },
-    { idioma: "ruso", ruta: nefAdvanced, stock: 8, name: "NEF Advanced" },
+    { idioma: "ingles", ruta: nefBegginer, stock: 15, name: "NEF Beginner", param: "nefBeginner" },
+    { idioma: "ingles", ruta: nefElementary, stock: 12, name: "NEF Elementary", param: "nefElementary" },
+    { idioma: "ingles", ruta: nefPreIntermediate, stock: 11, name: "NEF PreIntermediate", param: "nefPreIntermediate" },
+    { idioma: "ruso", ruta: nefIntermediate, stock: 18, name: "NEF Intermediate", param: "nefIntermediate" },
+    { idioma: "ruso", ruta: nefUpperIntermediate, stock: 9, name: "NEF UpperIntermediate", param: "nefUpperIntermediate" },
+    { idioma: "ruso", ruta: nefAdvanced, stock: 8, name: "NEF Advanced", param: "nefAdvanced" },
 ]
 
 //funcion que tiene la promise con 2s de retraso
@@ -29,6 +29,7 @@ function obtenerLibros() {
 
 function ItemListContainerFilter() {
     const { idioma } = useParams()
+    console.log(idioma)
     const [listaLibros, setListaLibros] = useState([])
     useEffect(() => {
         const listado = obtenerLibros()
@@ -44,7 +45,7 @@ function ItemListContainerFilter() {
     return (
         <div className="container-manual">
             <h1>Hola</h1>
-            {listaLibros.map(dato => <ItemList ruta={dato.ruta} stock={dato.stock} name={dato.name} />)}
+            {listaLibros.map(dato => <ItemList ruta={dato.ruta} stock={dato.stock} name={dato.name} param={dato.param} />)}
         </div>
     )
 }

@@ -11,12 +11,12 @@ import ItemList from "./item-list/ItemList"
 
 //array de objetos con los datos de cada libro
 const libros = [
-    { idioma: "ingles", ruta: nefBegginer, stock: 15, name: "NEF Beginner" },
-    { idioma: "ingles", ruta: nefElementary, stock: 12, name: "NEF Elementary" },
-    { idioma: "ingles", ruta: nefPreIntermediate, stock: 11, name: "NEF PreIntermediate" },
-    { idioma: "ruso", ruta: nefIntermediate, stock: 18, name: "NEF Intermediate" },
-    { idioma: "ruso", ruta: nefUpperIntermediate, stock: 9, name: "NEF UpperIntermediate" },
-    { idioma: "ruso", ruta: nefAdvanced, stock: 8, name: "NEF Advanced" },
+    { idioma: "ingles", ruta: nefBegginer, stock: 15, name: "NEF Beginner", param: "nefBeginner" },
+    { idioma: "ingles", ruta: nefElementary, stock: 12, name: "NEF Elementary", param: "nefElementary" },
+    { idioma: "ingles", ruta: nefPreIntermediate, stock: 11, name: "NEF PreIntermediate", param: "nefPreIntermediate" },
+    { idioma: "ruso", ruta: nefIntermediate, stock: 18, name: "NEF Intermediate", param: "nefIntermediate" },
+    { idioma: "ruso", ruta: nefUpperIntermediate, stock: 9, name: "NEF UpperIntermediate", param: "nefUpperIntermediate" },
+    { idioma: "ruso", ruta: nefAdvanced, stock: 8, name: "NEF Advanced", param: "nefAdvanced" },
 ]
 
 //funcion que tiene la promise con 2s de retraso
@@ -38,7 +38,7 @@ function ItemListContainer() {
 
     return (
         <div className="container-manual">
-            {listaLibros.map(e => <ItemList ruta={e.ruta} stock={e.stock} name={e.name}/>)}
+            {listaLibros.map(e => <ItemList ruta={e.ruta} stock={e.stock} name={e.name} param={e.param} />)}
         </div>
     )
 }

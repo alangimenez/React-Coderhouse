@@ -2,7 +2,7 @@ import { useState } from 'react'
 import "./itemCount.css"
 import {Link} from 'react-router-dom'
 
-function ItemCount({ stock, initial }) {
+function ItemCount({ stock, initial, param }) {
     const [valor, setValor] = useState(initial)
     const [carrito, setCarrito] = useState(0)
     const [stockLibro, setStockLibro] = useState(stock)
@@ -31,7 +31,7 @@ function ItemCount({ stock, initial }) {
             <button onClick={Disminuir}>-</button>
             <input value={valor} />
             <button onClick={Aumentar}>+</button>
-            <Link to="/libros/producto"><button>Ver detalle del producto</button></Link>
+            <Link to={`/libros/particular/${param}`}><button>Ver detalle del producto</button></Link>
             <br />
             <p>Stock disponible: {stockLibro}</p>
             <input type="submit" onClick={onAdd} />
