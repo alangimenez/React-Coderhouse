@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import "./itemCount.css"
-import {Link} from 'react-router-dom'
+import DatosContext from '../../context/CartContext.js'
 
-function ItemCount({ stock, initial, param }) {
+function ItemCount({ stock, initial, param, name}) {
     const [valor, setValor] = useState(initial)
     const [carrito, setCarrito] = useState(0)
     const [stockLibro, setStockLibro] = useState(stock)
+    const {setMensajes} = useContext(DatosContext)
     const Aumentar = () => {
         if (valor == stockLibro) {
             return
@@ -24,6 +25,7 @@ function ItemCount({ stock, initial, param }) {
         if (stockLibro > 0) {
             setCarrito(carrito + valor)
             setStockLibro(stockLibro - valor)
+            setMensajes({name: name, price: 500, quantity: valor})
         }
     }
     return (
@@ -31,8 +33,6 @@ function ItemCount({ stock, initial, param }) {
             <button onClick={Disminuir}>-</button>
             <input value={valor} />
             <button onClick={Aumentar}>+</button>
-            <Link to={`/libros/particular/${param}`}><button>Ver detalle del producto</button></Link>
-            <br />
             <p>Stock disponible: {stockLibro}</p>
             <input type="submit" onClick={onAdd} />
             <p>Cantidad en carrito: {carrito}</p>

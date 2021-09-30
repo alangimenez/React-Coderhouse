@@ -1,9 +1,12 @@
 .botonera{
+    width: 50%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: column;
+    margin: auto;
 }
-.botonera input {
-    width: 50%;
+
+.botonera input{
     text-align: center;
 }

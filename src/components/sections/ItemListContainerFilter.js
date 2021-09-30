@@ -29,7 +29,6 @@ function obtenerLibros() {
 
 function ItemListContainerFilter() {
     const { idioma } = useParams()
-    console.log(idioma)
     const [listaLibros, setListaLibros] = useState([])
     useEffect(() => {
         const listado = obtenerLibros()

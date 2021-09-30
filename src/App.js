@@ -10,41 +10,48 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import ItemDetailContainer from "./components/item-detail-container/ItemDetailContainer.js";
 import Index from "./components/sections/Index.js";
 import ItemListContainerFilter from "./components/sections/ItemListContainerFilter.js";
+import { DatosContextProvider } from "./components/context/CartContext.js";
+import Cart from "./components/sections/Cart.js";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <NavBar></NavBar>
-        <Switch>
-        <Route exact path="/">
-            <Index />
-          </Route>
-          <Route exact path="/libros">
-            <ItemListContainer />
-          </Route>
-          <Route path="/contacto">
-            <Contacto />
-          </Route>
-          <Route  path="/cursos">
-            <Cursos/>
-          </Route>
-          <Route path="/pruebadenivel">
-            <PruebaDeNivel />
-          </Route>
-          <Route path="/libros/producto">
-            <ItemDetailContainer />
-          </Route>
-          <Route exact path="/libros/:idioma">
-            <ItemListContainerFilter />
-          </Route>
-          <Route path="/libros/particular/:book">
-            <ItemDetailContainer />
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </div>
-    </BrowserRouter>
+    <DatosContextProvider>
+      <BrowserRouter>
+        <div className="App">
+          <NavBar></NavBar>
+          <Switch>
+            <Route exact path="/">
+              <Index />
+            </Route>
+            <Route exact path="/libros">
+              <ItemListContainer />
+            </Route>
+            <Route path="/contacto">
+              <Contacto />
+            </Route>
+            <Route path="/cursos">
+              <Cursos />
+            </Route>
+            <Route path="/pruebadenivel">
+              <PruebaDeNivel />
+            </Route>
+            <Route path="/libros/producto">
+              <ItemDetailContainer />
+            </Route>
+            <Route exact path="/libros/:idioma">
+              <ItemListContainerFilter />
+            </Route>
+            <Route path="/libros/particular/:book">
+              <ItemDetailContainer />
+            </Route>
+            <Route path="/cart">
+              <Cart />
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </div>
+      </BrowserRouter>
+    </DatosContextProvider>
   );
 }
 

@@ -25,7 +25,6 @@ function getBooks() {
 
 function ItemDetailContainer() {
     const { book } = useParams()
-    console.log(book)
     const [libro, setLibro] = useState([])
 
     useEffect(() => {
@@ -37,7 +36,7 @@ function ItemDetailContainer() {
     }, [])
 
     return (
-        <div>
+        <div className="container">
             {libro.map(e => <ItemDetail name={e.name} ruta={e.ruta} stock={e.stock} description={e.description} />)}
         </div>
     )
