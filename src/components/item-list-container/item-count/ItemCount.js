@@ -6,7 +6,7 @@ function ItemCount({ stock, initial, param, name}) {
     const [valor, setValor] = useState(initial)
     const [carrito, setCarrito] = useState(0)
     const [stockLibro, setStockLibro] = useState(stock)
-    const {setMensajes} = useContext(DatosContext)
+    const {setMensajes, setTotalCarrito} = useContext(DatosContext)
     const Aumentar = () => {
         if (valor == stockLibro) {
             return
@@ -25,7 +25,8 @@ function ItemCount({ stock, initial, param, name}) {
         if (stockLibro > 0) {
             setCarrito(carrito + valor)
             setStockLibro(stockLibro - valor)
-            setMensajes({name: name, price: 500, quantity: valor})
+            setMensajes({name: name, price: 500, quantity: valor, total: 0})
+            setTotalCarrito({name: name, price: 500, quantity: valor, total: 0})
         }
     }
     return (
