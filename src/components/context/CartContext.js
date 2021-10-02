@@ -27,10 +27,16 @@ export const DatosContextProvider = ({children}) => {
     const vaciarCarrito = () => {
         setDato1([])
         setTotal(0)
+        setItems(0)
+    }
+
+    const [items, setItems] = useState(0)
+    const totalItems = (ccc) => {
+        setItems(items + ccc.quantity)
     }
 
     return (
-        <Context.Provider value={{informacion: {dato1}, setMensajes, setTotalCarrito, total, eliminarArticulo, vaciarCarrito}}>
+        <Context.Provider value={{informacion: {dato1}, setMensajes, setTotalCarrito, total, items, eliminarArticulo, vaciarCarrito, totalItems}}>
             {children}
         </Context.Provider>
     )

@@ -1,12 +1,21 @@
 import DatosContext, { DatosContextProvider } from "../context/CartContext.js"
 import React, { useContext, useState } from 'react'
 import "./cart.css"
+import { Link } from "react-router-dom"
 
 function Cart() {
     const { informacion } = useContext(DatosContext)
     const {total} = useContext(DatosContext)
     const {eliminarArticulo, vaciarCarrito} = useContext(DatosContext)
-
+    console.log(informacion.lenght)
+    if (!informacion.dato1.length) {
+        return (
+            <div>
+                <h1>Ud aún no posee artículos en su carrito</h1>
+                <h3>Si desea buscar productos, haga click <Link to="/libros">aquí</Link></h3>
+            </div>
+        )
+    }
     return (
         <div>
             <button onClick={vaciarCarrito}>Vaciar carrito</button>
