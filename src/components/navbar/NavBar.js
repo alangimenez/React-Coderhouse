@@ -1,7 +1,7 @@
 import React from "react"
 import './navBar.css';
 import CartWidget from "./cart-widget/CartWidget";
-import {Link, NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 const idiomas = [
     {id: 1, idioma: "ingles"},
@@ -16,12 +16,12 @@ function NavBar() {
             <a href="">Cursos</a>
             <a href="">Prueba de nivel</a>
             <a href="">Contacto</a> */}
-            <Link to="/" activeClassName="navlink" className="Option">Home</Link>
-            <Link to="/libros" activeClassName="navlink" className="Option">Libros</Link>
-            <Link to="/cursos" activeClassName="navlink" className="Option">Cursos</Link>
-            <Link to="/pruebadenivel" activeClassName="navlink" className="Option">Prueba de nivel</Link>
-            <Link to="/contacto" activeClassName="navlink" className="Option">Contacto</Link>
-            {idiomas.map(dato => <Link key={dato.id} to={`/libros/${dato.idioma}`} activeClassName="NavLink" className="Option" > {dato.idioma} </Link>)}
+            <Link to="/" className="Option">Home</Link>
+            <Link to="/libros" className="Option">Libros</Link>
+            <Link to="/cursos" className="Option">Cursos</Link>
+            <Link to="/pruebadenivel" className="Option">Prueba de nivel</Link>
+            <Link to="/contacto" className="Option">Contacto</Link>
+            {idiomas.map(dato => <Link key={dato.id} to={`/libros/${dato.idioma}`} className="Option" > {dato.idioma} </Link>)}
             <CartWidget/>
         </div>
     )

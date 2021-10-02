@@ -1,5 +1,5 @@
-import DatosContext, { DatosContextProvider } from "../context/CartContext.js"
-import React, { useContext, useState } from 'react'
+import DatosContext from "../context/CartContext.js"
+import React, { useContext } from 'react'
 import "./cart.css"
 import { Link } from "react-router-dom"
 
@@ -7,7 +7,6 @@ function Cart() {
     const { informacion } = useContext(DatosContext)
     const {total} = useContext(DatosContext)
     const {eliminarArticulo, vaciarCarrito} = useContext(DatosContext)
-    console.log(informacion.lenght)
     if (!informacion.dato1.length) {
         return (
             <div>

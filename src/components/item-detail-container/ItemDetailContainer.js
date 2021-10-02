@@ -9,12 +9,12 @@ import nefAdvanced from "../item-list-container/img/nef-advanced.jpg"
 import ItemDetail from "./item-detail/ItemDetail"
 
 const libross = [
-    { idioma: "ingles", ruta: nefBegginer, stock: 15, name: "NEF Beginner", param: "nefBeginner", description: "Libro para estudiantes que están arrancando con el idioma. Incluye el libro para el estudiante y el libro para hacer las actividades de apoyo (homework)" },
-    { idioma: "ingles", ruta: nefElementary, stock: 12, name: "NEF Elementary", param: "nefElementary" },
-    { idioma: "ingles", ruta: nefPreIntermediate, stock: 11, name: "NEF PreIntermediate", param: "nefPreIntermediate" },
-    { idioma: "ruso", ruta: nefIntermediate, stock: 18, name: "NEF Intermediate", param: "nefIntermediate" },
-    { idioma: "ruso", ruta: nefUpperIntermediate, stock: 9, name: "NEF UpperIntermediate", param: "nefUpperIntermediate" },
-    { idioma: "ruso", ruta: nefAdvanced, stock: 8, name: "NEF Advanced", param: "nefAdvanced" },
+    { idioma: "ingles", id: 1, ruta: nefBegginer, stock: 15, name: "NEF Beginner", param: "nefBeginner", description: "Libro para estudiantes que están arrancando con el idioma. Incluye el libro para el estudiante y el libro para hacer las actividades de apoyo (homework)" },
+    { idioma: "ingles", id: 2, ruta: nefElementary, stock: 12, name: "NEF Elementary", param: "nefElementary" },
+    { idioma: "ingles", id: 3, ruta: nefPreIntermediate, stock: 11, name: "NEF PreIntermediate", param: "nefPreIntermediate" },
+    { idioma: "ruso", id: 4, ruta: nefIntermediate, stock: 18, name: "NEF Intermediate", param: "nefIntermediate" },
+    { idioma: "ruso", id: 5, ruta: nefUpperIntermediate, stock: 9, name: "NEF UpperIntermediate", param: "nefUpperIntermediate" },
+    { idioma: "ruso", id: 6, ruta: nefAdvanced, stock: 8, name: "NEF Advanced", param: "nefAdvanced" },
 ]
 
 function getBooks() {
@@ -37,7 +37,7 @@ function ItemDetailContainer() {
 
     return (
         <div className="container">
-            {libro.map(e => <ItemDetail name={e.name} ruta={e.ruta} stock={e.stock} description={e.description} />)}
+            {libro.map(e => <ItemDetail key={e.id} name={e.name} ruta={e.ruta} stock={e.stock} description={e.description} />)}
         </div>
     )
 }

@@ -12,12 +12,12 @@ import { useParams } from "react-router"
 
 //array de objetos con los datos de cada libro
 const libros = [
-    { idioma: "ingles", ruta: nefBegginer, stock: 15, name: "NEF Beginner", param: "nefBeginner" },
-    { idioma: "ingles", ruta: nefElementary, stock: 12, name: "NEF Elementary", param: "nefElementary" },
-    { idioma: "ingles", ruta: nefPreIntermediate, stock: 11, name: "NEF PreIntermediate", param: "nefPreIntermediate" },
-    { idioma: "ruso", ruta: nefIntermediate, stock: 18, name: "NEF Intermediate", param: "nefIntermediate" },
-    { idioma: "ruso", ruta: nefUpperIntermediate, stock: 9, name: "NEF UpperIntermediate", param: "nefUpperIntermediate" },
-    { idioma: "ruso", ruta: nefAdvanced, stock: 8, name: "NEF Advanced", param: "nefAdvanced" },
+    { idioma: "ingles", ruta: nefBegginer, stock: 15, name: "NEF Beginner", param: "nefBeginner", id: 1 },
+    { idioma: "ingles", ruta: nefElementary, stock: 12, name: "NEF Elementary", param: "nefElementary", id: 2 },
+    { idioma: "ingles", ruta: nefPreIntermediate, stock: 11, name: "NEF PreIntermediate", param: "nefPreIntermediate", id: 3 },
+    { idioma: "ruso", ruta: nefIntermediate, stock: 18, name: "NEF Intermediate", param: "nefIntermediate", id: 4 },
+    { idioma: "ruso", ruta: nefUpperIntermediate, stock: 9, name: "NEF UpperIntermediate", param: "nefUpperIntermediate", id:5 },
+    { idioma: "ruso", ruta: nefAdvanced, stock: 8, name: "NEF Advanced", param: "nefAdvanced", id: 6 },
 ]
 
 //funcion que tiene la promise con 2s de retraso
@@ -44,7 +44,7 @@ function ItemListContainerFilter() {
     return (
         <div className="container-manual">
             <h1>Hola</h1>
-            {listaLibros.map(dato => <ItemList ruta={dato.ruta} stock={dato.stock} name={dato.name} param={dato.param} />)}
+            {listaLibros.map(dato => <ItemList key={dato.id} ruta={dato.ruta} stock={dato.stock} name={dato.name} param={dato.param} />)}
         </div>
     )
 }

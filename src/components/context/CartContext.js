@@ -6,7 +6,7 @@ export const DatosContextProvider = ({children}) => {
     const [dato1, setDato1] = useState([])
     const setMensajes = ( aaa ) => {
         for (let i=0; i<dato1.length; i++) {
-            if(dato1[i].name == aaa.name) {
+            if(dato1[i].name === aaa.name) {
                 dato1[i].quantity = dato1[i].quantity + aaa.quantity
                 return
             }

@@ -34,7 +34,7 @@ function ItemCount({ stock, initial, param, name}) {
     return (
         <div className="botonera">
             <button onClick={Disminuir}>-</button>
-            <input value={valor} />
+            <input value={valor} readOnly />
             <button onClick={Aumentar}>+</button>
             <p>Stock disponible: {stockLibro}</p>
             <input type="submit" onClick={onAdd} />

@@ -7,7 +7,7 @@ function CartWidget () {
 
     const {items} = useContext(DatosContext)
 
-    if (items == 0) {
+    if (items === 0) {
         return (
             <div>
             <Link to="/cart"> Carrito</Link>
