@@ -7,6 +7,8 @@ import nefUpperIntermediate from "./img/nef-upper-intermediate.jpg"
 import nefAdvanced from "./img/nef-advanced.jpg"
 import "bootstrap/dist/css/bootstrap.css"
 import "./itemListContainer.css"
+import { collection, getDocs, query, where } from 'firebase/firestore'
+import { db } from "../firebase/Firebase.js"
 import ItemList from "./item-list/ItemList"
 
 //array de objetos con los datos de cada libro
@@ -28,17 +30,32 @@ function obtenerLibros() {
 
 function ItemListContainer() {
     const [listaLibros, setListaLibros] = useState([])
+    const [productos, setProductos] = useState([])
 
     useEffect(() => {
-        const listado = obtenerLibros()
+        getDocs(collection(db, 'productos')).then((QuerySnapshot) => {
+            const produccion = QuerySnapshot.docs.map(doc => {
+                return { id: doc.id, ...doc.data() }
+            })
+            setProductos(produccion)
+        }).catch((error) => {
+            console.log('Error del catch: ', error)
+        }).finally(() => {
+            console.log("termino el useeffect")
+        })
+        console.log(productos) // Luego ver porque los productos salen en desorden
+
+
+/*         const listado = obtenerLibros()
         listado.then(dato => {
             setListaLibros(dato)
         })
-    }, [])
+ */    }, [])
 
     return (
         <div className="container-manual">
-            {listaLibros.map(e => <ItemList key={e.id} ruta={e.ruta} stock={e.stock} name={e.name} param={e.param} />)}
+            {/*             {listaLibros.map(e => <ItemList key={e.id} ruta={e.ruta} stock={e.stock} name={e.name} param={e.param} />)}
+ */}        {productos.map(e => <ItemList key={e.id} ruta={e.ruta} stock={e.stock} name={e.name} param={e.param} />)}
         </div>
     )
 }
