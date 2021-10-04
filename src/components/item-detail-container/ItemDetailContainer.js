@@ -7,6 +7,8 @@ import nefIntermediate from "../item-list-container/img/nef-intermediate.jpg"
 import nefUpperIntermediate from "../item-list-container/img/nef-upper-intermediate.jpg"
 import nefAdvanced from "../item-list-container/img/nef-advanced.jpg"
 import ItemDetail from "./item-detail/ItemDetail"
+import { db } from "../firebase/Firebase"
+import { doc, getDoc } from 'firebase/firestore'
 
 const libross = [
     { idioma: "ingles", id: 1, ruta: nefBegginer, stock: 15, name: "NEF Beginner", param: "nefBeginner", description: "Libro para estudiantes que están arrancando con el idioma. Incluye el libro para el estudiante y el libro para hacer las actividades de apoyo (homework)" },
@@ -28,16 +30,24 @@ function ItemDetailContainer() {
     const [libro, setLibro] = useState([])
 
     useEffect(() => {
-        const librosss = getBooks()
+        getDoc(doc(db, 'productos', book)).then((querySnapshot) => {
+            setLibro({id: querySnapshot.id, ...querySnapshot.data()})
+        }).catch((error) => {
+            console.log('Error searching intems', error)
+        }).finally(() => {
+            console.log("Finalizó el useEffect")
+        })
+
+        /* const librosss = getBooks()
         librosss.then(dato => {
             const resultado = dato.filter(e => e.param === book)
             setLibro(resultado)
-        })
+        }) */
     }, [])
 
     return (
         <div className="container">
-            {libro.map(e => <ItemDetail key={e.id} name={e.name} ruta={e.ruta} stock={e.stock} description={e.description} />)}
+            <ItemDetail key={libro.id} name={libro.name} ruta={libro.ruta} stock={libro.stock} description={libro.description} />
         </div>
     )
 }
