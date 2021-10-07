@@ -12,12 +12,12 @@ import { useParams } from "react-router"
 
 //array de objetos con los datos de cada libro
 const libros = [
-    { idioma: "ingles", ruta: nefBegginer, stock: 15, name: "NEF Beginner", param: "nefBeginner", id: 1 },
-    { idioma: "ingles", ruta: nefElementary, stock: 12, name: "NEF Elementary", param: "nefElementary", id: 2 },
-    { idioma: "ingles", ruta: nefPreIntermediate, stock: 11, name: "NEF PreIntermediate", param: "nefPreIntermediate", id: 3 },
-    { idioma: "ruso", ruta: nefIntermediate, stock: 18, name: "NEF Intermediate", param: "nefIntermediate", id: 4 },
-    { idioma: "ruso", ruta: nefUpperIntermediate, stock: 9, name: "NEF UpperIntermediate", param: "nefUpperIntermediate", id:5 },
-    { idioma: "ruso", ruta: nefAdvanced, stock: 8, name: "NEF Advanced", param: "nefAdvanced", id: 6 },
+    { idioma: "ingles", ruta: nefBegginer, stock: 15, name: "NEF Beginner", param: "BHWZh1EYdfsfGv6RR6cZ", id: 1 },
+    { idioma: "ingles", ruta: nefElementary, stock: 12, name: "NEF Elementary", param: "zq34SlZzeVqhkW1MOFOD", id: 2 },
+    { idioma: "ingles", ruta: nefPreIntermediate, stock: 11, name: "NEF PreIntermediate", param: "uakSiRNlg9T4p6NiP9Kq", id: 3 },
+    { idioma: "ruso", ruta: nefIntermediate, stock: 18, name: "NEF Intermediate", param: "KgQDdBEXGPTk9UppCLQy", id: 4 },
+    { idioma: "ruso", ruta: nefUpperIntermediate, stock: 9, name: "NEF UpperIntermediate", param: "D9lS1xrfxx0csC2UVqbe", id:5 },
+    { idioma: "ruso", ruta: nefAdvanced, stock: 8, name: "NEF Advanced", param: "59h8hJ3QbQ1yNk4UpnR8", id: 6 },
 ]
 
 //funcion que tiene la promise con 2s de retraso
