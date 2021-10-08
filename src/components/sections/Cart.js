@@ -2,6 +2,7 @@ import DatosContext from "../context/CartContext.js"
 import React, { useContext } from 'react'
 import "./cart.css"
 import { Link } from "react-router-dom"
+import BotonEliminar from "./BotonEliminar.js"
 
 function Cart() {
     const { informacion } = useContext(DatosContext)
@@ -15,6 +16,11 @@ function Cart() {
             </div>
         )
     }
+
+    const prueba = (aaa) => {
+        console.log("esta es la función de prueba" + aaa)
+    }
+
     return (
         <div>
             <button onClick={vaciarCarrito}>Vaciar carrito</button>
@@ -25,7 +31,7 @@ function Cart() {
                 <h3>Cantidad: {e.quantity}</h3>
                 <h3>Precio por unidad: {e.price}</h3>
                 <h2>Subtotal: {e.quantity*e.price}</h2>
-                <button onClick={eliminarArticulo(e.name)}>Eliminar articulo {e.name}</button>
+                <BotonEliminar identifier={e.name} qty={e.quantity} />
             </div>
             )}
             <h1>Total a pagar: {total}</h1>
