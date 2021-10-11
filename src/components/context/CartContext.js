@@ -37,8 +37,17 @@ export const DatosContextProvider = ({children}) => {
         setItems(items + ccc.quantity)
     }
 
+    const [pedido, setPedido] = useState([])
+    const hacerPedido = (fff) => {
+        setPedido(fff)
+    }
+
+    const mostrarPedido = () => {
+        console.log(pedido)
+    }
+
     return (
-        <Context.Provider value={{informacion: {dato1}, setMensajes, setTotalCarrito, total, items, eliminarArticulo, vaciarCarrito, totalItems}}>
+        <Context.Provider value={{informacion: {dato1}, setMensajes, setTotalCarrito, total, items, eliminarArticulo, vaciarCarrito, totalItems, hacerPedido, mostrarPedido}}>
             {children}
         </Context.Provider>
     )
