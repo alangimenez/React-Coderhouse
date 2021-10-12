@@ -3,6 +3,8 @@ import React, { useContext, useState } from 'react'
 import "./cart.css"
 import { Link } from "react-router-dom"
 import BotonEliminar from "./BotonEliminar.js"
+import { db } from "../firebase/Firebase.js"
+import { addDoc, getDoc, doc, writeBatch, Timestamp, collection } from "firebase/firestore"
 
 function Cart() {
     const { informacion } = useContext(DatosContext)
@@ -26,14 +28,43 @@ function Cart() {
 
     const confirmarCompra = (e) => {
         e.preventDefault()
-        hacerPedido({
-            name: nombreApellido,
-            adress: direccion,
-            IDidentifier: dni,
-            postalCode: cp,
-            products: informacion.dato1,
-        })
+
+        const compra = {
+            nombre: nombreApellido,
+            domicilio: direccion,
+            documento: dni,
+            codigopostal: cp,
+            carro: informacion.dato1,
+        }
+
+        const lote = writeBatch(db)
+        const sinStock = []
+
+        for (let i = 0; compra.carro.length > i; i++) {
+            getDoc(doc(db, 'productos', compra.carro[i].id)).then((e) => {
+                if (e.data().stock >= compra.carro[i].quantity) {
+                    lote.update(doc(db, 'productos', compra.carro[i].id), {
+                        stock: e.data().stock - compra.carro[i].quantity
+                    })
+                    console.log(lote)
+                } else {
+                    sinStock.push({ id: e.name, ...e.data() })
+                    console.log("Se ejecutó dentro del else")
+                }
+            })
+        }
+        if (sinStock.length == 0) {
+            addDoc(collection(db, 'ordenes'), compra).then(() => {
+                lote.commit().then(() => {
+                    console.log("la orden se ejecutó correctamente, revisar firebase, colección ordenes")
+                })
+            }).catch((error) => {
+                console.log("hubo un error " + error)
+            })
+        }
     }
+
+
 
     const verFormulario = () => {
         aaa == 0 ? setAaa(1) : setAaa(0)
@@ -54,7 +85,7 @@ function Cart() {
                 <p></p>}
             <h1>Su pedido: </h1>
             {informacion.dato1.map(e =>
-                <div className="container product">
+                <div key={e.id}className="container product">
                     <h3>Producto: {e.name}</h3>
                     <h3>Cantidad: {e.quantity}</h3>
                     <h3>Precio por unidad: {e.price}</h3>
@@ -63,7 +94,7 @@ function Cart() {
                 </div>
             )}
             <h1>Total a pagar: {total}</h1>
-            <button onClick={mostrarPedido}>Mostrar pedido realizado</button>
+            <button onClick={() => console.log(informacion.dato1)}>Mostrar pedido realizado</button>
         </div>
     )
 }

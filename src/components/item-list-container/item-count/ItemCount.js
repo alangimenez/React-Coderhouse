@@ -26,7 +26,7 @@ function ItemCount({ stock, initial, param, name}) {
         if (stockLibro > 0) {
             setCarrito(carrito + valor)
             setStockLibro(stockLibro - valor)
-            setMensajes({name: name, price: 500, quantity: valor, total: 0})
+            setMensajes({name: name, price: 500, quantity: valor, total: 0, id: param})
             setTotalCarrito({name: name, price: 500, quantity: valor, total: 0})
             totalItems({name: name, price: 500, quantity: valor, total: 0})
         }

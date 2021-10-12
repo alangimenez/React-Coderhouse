@@ -47,7 +47,7 @@ function ItemDetailContainer() {
 
     return (
         <div className="container">
-            <ItemDetail key={libro.id} name={libro.name} ruta={libro.ruta} stock={libro.stock} description={libro.description} />
+            <ItemDetail key={libro.id} name={libro.name} ruta={libro.ruta} stock={libro.stock} description={libro.description} param={libro.id}/>
         </div>
     )
 }
