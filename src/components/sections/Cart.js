@@ -28,7 +28,6 @@ function Cart() {
 
     const confirmarCompra = (e) => {
         e.preventDefault()
-
         const compra = {
             nombre: nombreApellido,
             domicilio: direccion,
@@ -62,6 +61,7 @@ function Cart() {
                 console.log("hubo un error " + error)
             })
         }
+        vaciarCarrito()
     }
 
 
