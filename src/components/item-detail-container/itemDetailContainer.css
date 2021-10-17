@@ -1,0 +1,13 @@
+.container-detail{
+    display: flex
+}
+.container-detail-img{
+    width: 50%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.container-detail-info{
+    width: 50%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}

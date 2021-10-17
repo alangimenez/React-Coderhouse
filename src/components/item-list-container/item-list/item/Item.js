@@ -5,7 +5,7 @@ function Item({ ruta, name}) {
         <Fragment>
             <img className="card-img-top" src={ruta} alt={"Libro de " + name} />
             <div className="card-body">
-                <h5 className="card-title">{name}</h5>
+                <h2 className="card-title">{name}</h2>
             </div>
         </Fragment>
     )

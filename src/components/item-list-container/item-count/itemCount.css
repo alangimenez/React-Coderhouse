@@ -2,11 +2,29 @@
     width: 50%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     flex-direction: column;
     margin: auto;
 }
 
 .botonera input{
     text-align: center;
+    height: 40px !important;
+}
+
+.botonera-input{
+    flex-wrap: nowrap;
+    flex-direction: row;
+    height: 40px;
+}
+.botonera-input button {
+    width: 19%;
+    text-align: center;
+    height: 40px !important;
+    display: inline;
+    margin-top: -4px !important;
+}
+.botonera-input input {
+    width: 50%;
+    height: 40px; 
+    display: inline;
 }

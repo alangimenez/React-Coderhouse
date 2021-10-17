@@ -9,8 +9,7 @@ function ItemList({ ruta, stock, name, param }) {
     return (
         <div className="card card-manual">
             <Item ruta={ruta} name={name} stock={stock}/>
-            <h3>Aca iria el parametro: {param}</h3>
-            <Link to={`/libros/particular/${param}`}><button>Ver detalle del producto</button></Link>
+            <Link to={`/libros/particular/${param}`}><button>Ver detalle</button></Link>
         </div>
     )
 }
