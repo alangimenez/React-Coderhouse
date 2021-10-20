@@ -1,4 +1,15 @@
 .product{
     border: 1px solid black;
     border-radius: 10px;
+    display: flex;
+}
+.product-left{
+    display: inline;
+}
+.product-left img {
+    width: 150px;
+    height: 200px;
+}
+.product-right{
+    display: inline;
 }

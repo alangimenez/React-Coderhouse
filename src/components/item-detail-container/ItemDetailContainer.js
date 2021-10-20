@@ -46,7 +46,7 @@ function ItemDetailContainer() {
                 <img src={libro.ruta} style={{ width: 325, height: 450 }} alt={"Libro de " + libro.name} />
             </div>
             <div className="container-detail-info">
-                <ItemDetail key={libro.id} name={libro.name} ruta={libro.ruta} stock={libro.stock} description={libro.description} param={libro.id} />
+                <ItemDetail key={libro.id} name={libro.name} ruta={libro.ruta} stock={libro.stock} description={libro.description} param={libro.id} price={libro.price} ruta={libro.ruta}/>
             </div>
         </div>
     )

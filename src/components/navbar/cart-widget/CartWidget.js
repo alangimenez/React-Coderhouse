@@ -16,9 +16,9 @@ function CartWidget () {
     }
 
     return (
-        <div>
+        <div className="cart-widget">
             <Link to="/cart"> Carrito</Link>
-            <p>{items}</p>
+            <p>{items} items</p>
         </div>
     )
 }

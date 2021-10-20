@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom'
 import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap'
 
 const idiomas = [
-    { id: 1, idioma: "ingles" },
-    { id: 2, idioma: "italiano" },
-    { id: 3, idioma: "frances" },
-    { id: 4, idioma: "aleman" }
+    { id: 1, idioma: "Ingles" },
+    { id: 2, idioma: "Italiano" },
+    { id: 3, idioma: "Frances" },
+    { id: 4, idioma: "Aleman" },
+    { id: 5, idioma: "Diccionario"}
 ]
 
 function NavBar() {
@@ -22,7 +23,7 @@ function NavBar() {
             <div className="dropdown">
                 <p>Categorias</p>
                 <div className="dropdown-content">
-                    {idiomas.map(dato => <Link key={dato.id} to={`/libros/${dato.idioma}`} className="Option" > {dato.idioma} </Link>)}
+                    {idiomas.map(dato => <Link key={dato.id} to={`/libros/${dato.idioma.toLowerCase()}`} className="Option" > {dato.idioma} </Link>)}
                 </div>
             </div>
             <CartWidget />

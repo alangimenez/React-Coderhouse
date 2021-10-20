@@ -1,12 +1,14 @@
 import ItemCount from "../../item-list-container/item-count/ItemCount.js"
+import "./itemDetail.css"
 
-function ItemDetail({ name, description, stock, ruta, param }) {
+function ItemDetail({ name, description, stock, price, param, ruta }) {
     return (
-        <div>
+        <div className="item-detail">
             <h1>{name}</h1>
+            <h4>Precio: {"$ "+price}</h4>
+            <ItemCount stock={stock} initial={1} name={name} param={param} price={price} ruta={ruta}/>
+            <br />
             <p>{description}</p>
-            <h4>Unidades en stock: {stock}</h4>
-            <ItemCount stock={stock} initial={1} name={name} param={param}/>
         </div>
     )
 }

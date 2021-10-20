@@ -4,7 +4,7 @@ import DatosContext from '../../context/CartContext.js'
 import { Link } from 'react-router-dom'
 import "bootstrap/dist/css/bootstrap.min.css"
 
-function ItemCount({ stock, initial, param, name }) {
+function ItemCount({ stock, initial, param, name, price, ruta }) {
     const [valor, setValor] = useState(initial)
     const [carrito, setCarrito] = useState(0)
     const [stockLibro, setStockLibro] = useState(stock)
@@ -27,9 +27,9 @@ function ItemCount({ stock, initial, param, name }) {
         if (stockLibro > 0) {
             setCarrito(carrito + valor)
             setStockLibro(stockLibro - valor)
-            setMensajes({ name: name, price: 500, quantity: valor, total: 0, id: param })
-            setTotalCarrito({ name: name, price: 500, quantity: valor, total: 0 })
-            totalItems({ name: name, price: 500, quantity: valor, total: 0 })
+            setMensajes({ name: name, price: price, quantity: valor, total: 0, id: param, ruta: ruta })
+            setTotalCarrito({ name: name, price: price, quantity: valor, total: 0 })
+            totalItems({ name: name, price: price, quantity: valor, total: 0 })
         }
     }
     return (
@@ -42,7 +42,11 @@ function ItemCount({ stock, initial, param, name }) {
             <p>Stock disponible: {stockLibro}</p>
             <input type="submit" className="btn btn-dark" onClick={onAdd} />
             <p>Cantidad en carrito: {carrito}</p>
-            {carrito > 0 ? <Link to="/cart">Ir al carrito</Link> : <h1></h1>}
+            {carrito > 0 ?
+                <div className="btn btn-dark" style={{ color: "white" }}>
+                    <Link to="/cart">Ir al carrito</Link>
+                </div>
+                : <h1></h1>}
         </div>
     )
 }

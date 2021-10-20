@@ -5,6 +5,7 @@ import ItemList from "../item-list-container/item-list/ItemList"
 import { useParams } from "react-router"
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from "../firebase/Firebase.js"
+import "./itemListContainerFilter.css"
 
 function ItemListContainerFilter() {
     const { idioma } = useParams()
@@ -26,9 +27,16 @@ function ItemListContainerFilter() {
 
     }, [idioma])
 
+    function PrimeraMayuscula(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     return (
-        <div className="container-manual">
-            {listaLibros.map(dato => <ItemList key={dato.id} ruta={dato.ruta} stock={dato.stock} name={dato.name} param={dato.id} />)}
+        <div>
+            <h1 className="filter-titulo">Libros de {PrimeraMayuscula(idioma)}</h1>
+            <div className="container-manual">
+                {listaLibros.map(dato => <ItemList key={dato.id} ruta={dato.ruta} stock={dato.stock} name={dato.name} param={dato.id} price={dato.price} />)}
+            </div>
         </div>
     )
 }

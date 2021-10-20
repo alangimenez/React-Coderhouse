@@ -3,3 +3,16 @@
     height: 50px;
     margin: 3px 16px;
 }
+.cart-widget {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.cart-widget p {
+    margin: 16px;
+    margin-left: 0px;
+}
+
+.cart-widget a {
+    margin-right: 10px;
+}

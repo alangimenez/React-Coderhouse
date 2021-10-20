@@ -85,12 +85,20 @@ function Cart() {
                 <p></p>}
             <h1>Su pedido: </h1>
             {informacion.dato1.map(e =>
-                <div key={e.id}className="container product">
-                    <h3>Producto: {e.name}</h3>
-                    <h3>Cantidad: {e.quantity}</h3>
-                    <h3>Precio por unidad: {e.price}</h3>
-                    <h2>Subtotal: {e.quantity * e.price}</h2>
+                <div key={e.id} className="container product">
+                    <div className="product-left">
+                        <img src={e.ruta} />
+                    </div>
+                    <div className="product-right">
+                        <h3>Producto: {e.name}</h3>
+                        <h3>Cantidad: {e.quantity}</h3>
+                        <h3>Precio por unidad: {e.price}</h3>
+                    </div>
+                    <div>
+                        <h2>Subtotal: {e.quantity * e.price}</h2>
+                    </div>
                     <BotonEliminar identifier={e.name} qty={e.quantity} />
+
                 </div>
             )}
             <h1>Total a pagar: {total}</h1>
