@@ -2,6 +2,13 @@
     border: 1px solid black;
     border-radius: 10px;
     display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.product button {
+    margin: 1rem;
+    height: 100%;
 }
 .product-left{
     display: inline;
@@ -9,7 +16,46 @@
 .product-left img {
     width: 150px;
     height: 200px;
+    margin: 1rem;
 }
 .product-right{
-    display: inline;
+    display: table-cell;
+    margin: 1rem;
+    vertical-align: middle;
+    height: 100%;
+    width: 30%;
+}
+.product-subtotal {
+    margin: 1rem;
+    width: 30%;
+}
+.formulario {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 1rem;
+    margin: 1rem;
+    width: 75%;
+}
+.formulario input {
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.titulo {
+    margin: 1rem 0
+}
+
+@media (max-width: 767px) {
+    .product{
+        flex-direction: column;
+    }
+    .product-right {
+        width: 80%;
+    }
+    .product-subtotal {
+        width: 80%;
+    }
 }

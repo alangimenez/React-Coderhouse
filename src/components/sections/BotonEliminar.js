@@ -1,15 +1,15 @@
 import DatosContext from "../context/CartContext.js"
 import React, { useContext } from 'react'
 
-function BotonEliminar ({identifier, qty}) {
+function BotonEliminar ({identifier, qty, price}) {
 
     const {eliminarArticulo} = useContext(DatosContext)
     const prueba = () => {
-        eliminarArticulo(identifier, qty)
+        eliminarArticulo(identifier, qty, price)
     }
 
     return (
-        <button onClick={prueba}>Eliminar articulo</button>
+        <button onClick={prueba} className="btn btn-dark">Eliminar articulo</button>
     )
 }
 

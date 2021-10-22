@@ -20,20 +20,13 @@ function ItemListContainer() {
             console.log("termino el useeffect")
         })
         console.log(productos) // Luego ver porque los productos salen en desorden, seguro es por el id
-
-
-/*         const listado = obtenerLibros()
-        listado.then(dato => {
-            setListaLibros(dato)
-        })
- */    }, [])
+    }, [])
 
     return (
         <div className="container-titulo">
             <h1>Todos nuestros libros:</h1>
             <div className="container-manual">
-                {/*             {listaLibros.map(e => <ItemList key={e.id} ruta={e.ruta} stock={e.stock} name={e.name} param={e.param} />)}
- */}        {productos.map(e => <ItemList key={e.id} ruta={e.ruta} stock={e.stock} name={e.name} param={e.id} price={e.price} />)}
+                {productos.map(e => <ItemList key={e.id} ruta={e.ruta} stock={e.stock} name={e.name} param={e.id} price={e.price} />)}
             </div>
         </div>
     )

@@ -1,8 +1,7 @@
 .navbar{
     display: flex;
     justify-content: flex-end !important;
-    background-color: rgba(1,243,35,255);
-  }
+}
   .navbar a{
     margin: 1rem;
     text-decoration: none;
@@ -14,9 +13,9 @@
     display: inline-block;
   }
 
-  .dropdown p {
+/*   .dropdown p {
     margin: 16px;
-  }
+  } */
   
   .dropdown-content {
     display: none;
@@ -31,4 +30,13 @@
   
   .dropdown:hover .dropdown-content {
     display: block;
+  }
+
+  .manual {
+    background-color: rgba(1,243,35,255) !important;
+    color: green;
+    padding: 0px !important;
+  }
+  .dropdown-li {
+    text-align: center;
   }

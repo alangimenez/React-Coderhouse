@@ -28,3 +28,9 @@
     height: 40px; 
     display: inline;
 }
+
+@media (max-width: 767px) {
+    .botonera {
+        width: 75%;
+    }
+}

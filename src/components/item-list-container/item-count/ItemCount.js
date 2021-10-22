@@ -8,7 +8,7 @@ function ItemCount({ stock, initial, param, name, price, ruta }) {
     const [valor, setValor] = useState(initial)
     const [carrito, setCarrito] = useState(0)
     const [stockLibro, setStockLibro] = useState(stock)
-    const { setMensajes, setTotalCarrito, totalItems } = useContext(DatosContext)
+    const { setMensajes, setTotalCarrito, totalItems, informacion } = useContext(DatosContext)
     const Aumentar = () => {
         if (valor == stockLibro) {
             return
@@ -41,7 +41,15 @@ function ItemCount({ stock, initial, param, name, price, ruta }) {
             </div>
             <p>Stock disponible: {stockLibro}</p>
             <input type="submit" className="btn btn-dark" onClick={onAdd} />
-            <p>Cantidad en carrito: {carrito}</p>
+            <p>Cantidad en carrito: {
+                informacion.dato1.map(item => {
+                    if (item.name == name) {
+                        return item.quantity
+                    } else {
+                        return 0
+                    }
+                })
+            }</p>
             {carrito > 0 ?
                 <div className="btn btn-dark" style={{ color: "white" }}>
                     <Link to="/cart">Ir al carrito</Link>

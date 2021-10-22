@@ -20,10 +20,11 @@ export const DatosContextProvider = ({children}) => {
         setTotal(total + (bbb.price * bbb.quantity))
     }
 
-    const eliminarArticulo = (ddd, eee) => {
+    const eliminarArticulo = (ddd, eee, fff) => {
         const dato2 = dato1.filter(e => e.name != ddd)
         setItems(items - eee)
         setDato1(dato2)
+        setTotal(total - (eee * fff))
     }
 
     const vaciarCarrito = () => {

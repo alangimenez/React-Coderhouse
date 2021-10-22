@@ -6,8 +6,34 @@
     margin-top: 3rem;
     margin-bottom: 3rem;
 }
+.container-detail-img img {
+    width: 325px;
+    height: 450px;
+}
 .container-detail-info{
     width: 50%;
     margin-top: 3rem;
     margin-bottom: 3rem;
+}
+@media (max-width: 767px) {
+    .container-detail {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .container-detail-img {
+        margin: auto;
+        margin-top: 1rem;
+        width: 85%;
+    }
+    .container-detail-info {
+        margin: auto;
+        width: 85%;
+    }
+    
+}
+@media (max-width: 417px) {
+    .container-detail-img img {
+        width: 90%;
+        height: auto;
+    }
 }

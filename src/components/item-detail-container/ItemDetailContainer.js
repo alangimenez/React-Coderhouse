@@ -42,10 +42,10 @@ function ItemDetailContainer() {
 
     return (
         <div className="container-detail">
-            <div className="container-detail-img">
-                <img src={libro.ruta} style={{ width: 325, height: 450 }} alt={"Libro de " + libro.name} />
+            <div className="animate__animated animate__fadeInLeft animate__slow container-detail-img">
+                <img src={libro.ruta} alt={"Libro de " + libro.name} />
             </div>
-            <div className="container-detail-info">
+            <div className="animate__animated animate__fadeInRight animate__slow container-detail-info">
                 <ItemDetail key={libro.id} name={libro.name} ruta={libro.ruta} stock={libro.stock} description={libro.description} param={libro.id} price={libro.price} ruta={libro.ruta}/>
             </div>
         </div>
