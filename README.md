@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+Proyecto Carrito React.js Coderhouse
+Hecho por Alan Gimenez
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Todo el proyecto esta hecho en components, estructurando las diferentes secciones y sus componentes
+en carpetas separadas, y dejando separados los componentes comunes a todos las secciones y los 
+componentes que no se renderizan por contener funciones que son solo para el funcionamiento de la aplicación.
 
-## Available Scripts
+El proyecto aún no está finalizado, dado que por motivos personales no pude dedicarle todo el tiempo 
+que hubiera deseado postcurso. Sin embargo, el funcionamiento de la aplicación creo que es bastante aceptable.
 
-In the project directory, you can run:
+Faltaría agregarle contenido a las secciones en blanco, así como quizas agregar algún filtro por precio o similar en la sección libros. Adicionalmente, en la vista individual de cada libro podría agregarse al final algun carrousel de productos relacionados por ejemplo. En el carrito se podrían agregar mas datos para hacerlo mas real (agregar unidades o sacar unidades directamente desde el carrito con una botonera similar a la que tiene la vista detallada de cada producto, por ejemplo). Adicionalmente, en el modal final podría incorporarse un detalle con el número de pedido (dado por firebase), y un breve resumen de los datos cargados.
 
-### `yarn start`
+Por otro lado, quizas los nombres de ciertas variables no son los mejores, quedaron instaladas algunas cositas que no se utilizan y falto fusionar el ItemListContainer con ItemListContainerFilter (uno muestra todos los libros, el otro los filtra dependiendo el idioma). 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+De todas maneras, como mencionaba, creo que el funcionamiento para el tiempo que pude dedicarle al final es bastante aceptable: los productos se puede visualizar, los stock se actualizan con los pedidos, siendo también los mismos registrados en firebase, las botoneras tienen controles para no bajar de cero unidades ni exceder el stock, el carrito puede limpiarse con solo un boton y se le agrego algún efecto porque quería probar como era agregar otras librerias a React.js (para estilo se uso casi todo BS y para los efectos WoW.js). Me hubiera gustado hacer mas cosas (hacer el login de usuario, alguna parte para visualizar pedidos usando algun user especifico, completar la sección de cursos con mas "productos" que obviamente serían cursos que se podrían adquirir, y obviamente terminar los estilos entre otros).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+El funcionamiento en sí de la pagina es bastante sencillo: la información en las secciones Libros y Categorias se carga desde Firebase, redireccionando al dar en Ver Detalle a la vista individual de cada producto, donde traera la información de ese producto especificamente desde Firebase. Al seleccionar cuantas unidades se desean, se puede ir directamente al carrito o volver para seguir comprando. En el carrito, el mismo puede limpiarse por articulo o por completo. La información mostrada en el carrito proviene del Context, que almacenará toda la información hasta confirmada la compra. Solo una vez rellenado el formulario con los datos personales se podrá dar click en Comprar, lo cual registrará el pedido en Firebase y dejará un mensaje de compra exitosa. 
 
-### `yarn test`
+Se adjunta video con un ejemplo del funcionamiento de la pagina, y el proyecto subido a GitHub (en funcionamiento).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Agradezco cualquier feedback adicional a los temas a mejorar que comentaba lineas arriba, y muchas gracias por todo! Alan.

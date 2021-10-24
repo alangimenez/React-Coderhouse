@@ -1,4 +1,4 @@
-import ItemCount from "../../item-list-container/item-count/ItemCount.js"
+import ItemCount from "../../../libros/item-list-container/item-count/ItemCount"
 import "./itemDetail.css"
 
 function ItemDetail({ name, description, stock, price, param, ruta }) {

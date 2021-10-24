@@ -1,4 +1,4 @@
-import DatosContext from "../context/CartContext.js"
+import DatosContext from "../../context/CartContext.js"
 import React, { useContext } from 'react'
 
 function BotonEliminar ({identifier, qty, price}) {

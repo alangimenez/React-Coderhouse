@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
 import "bootstrap/dist/css/bootstrap.css"
 import "./itemListContainer.css"
-import { collection, getDocs, query, where } from 'firebase/firestore'
-import { db } from "../firebase/Firebase.js"
+import { collection, getDocs} from 'firebase/firestore'
+import { db } from "../../../firebase/Firebase.js"
 import ItemList from "./item-list/ItemList"
 
 function ItemListContainer() {
@@ -19,7 +19,7 @@ function ItemListContainer() {
         }).finally(() => {
             console.log("termino el useeffect")
         })
-        console.log(productos) // Luego ver porque los productos salen en desorden, seguro es por el id
+        console.log(productos)
     }, [])
 
     return (

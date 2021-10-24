@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react'
 import "./itemCount.css"
-import DatosContext from '../../context/CartContext.js'
+import DatosContext from '../../../../context/CartContext'
 import { Link } from 'react-router-dom'
 import "bootstrap/dist/css/bootstrap.min.css"
 

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react"
 import "bootstrap/dist/css/bootstrap.css"
-import "../item-list-container/itemListContainer.css"
-import ItemList from "../item-list-container/item-list/ItemList"
+import ItemList from "../libros/item-list-container/item-list/ItemList"
 import { useParams } from "react-router"
 import { collection, getDocs } from 'firebase/firestore'
-import { db } from "../firebase/Firebase.js"
+import { db } from "../../firebase/Firebase.js"
 import "./itemListContainerFilter.css"
 
 function ItemListContainerFilter() {

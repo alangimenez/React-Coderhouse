@@ -1,9 +1,9 @@
-import DatosContext from "../context/CartContext.js"
+import DatosContext from "../../context/CartContext.js"
 import React, { useContext, useState } from 'react'
 import "./cart.css"
 import { Link } from "react-router-dom"
 import BotonEliminar from "./BotonEliminar.js"
-import { db } from "../firebase/Firebase.js"
+import { db } from "../../firebase/Firebase.js"
 import { addDoc, getDoc, doc, writeBatch, Timestamp, collection } from "firebase/firestore"
 
 function Cart() {
@@ -43,6 +43,7 @@ function Cart() {
             documento: dni,
             codigopostal: cp,
             carro: informacion.dato1,
+            date: Timestamp.fromDate(new Date())
         }
 
         const lote = writeBatch(db)
@@ -116,14 +117,36 @@ function Cart() {
             </div>
             <br />
             {aaa == 0 ?
-                <form className="animate__animated animate__fadeInDown animate__slow formulario" onSubmit={confirmarCompra}>
-                    <input onChange={({ target }) => setNombreApellido(target.value)} onKeyUp={habilitar} type="text" placeholder="Nombre y Apellido" required></input>
-                    <input onChange={({ target }) => setDNI(target.value)} onKeyUp={habilitar} type="number" placeholder="DNI o Cedula de identidad" required></input>
-                    <input onChange={({ target }) => setDireccion(target.value)} onKeyUp={habilitar} type="text" placeholder="Dirección de entrega" required></input>
-                    <input onChange={({ target }) => setCp(target.value)} onKeyUp={habilitar} type="number" placeholder="Código postal" required></input>
-                    <button type="submit" className="btn btn-dark" disabled={disable}>Confirmar compra</button>
-                </form> :
+                <div>
+                    <form className="animate__animated animate__fadeInDown animate__slow formulario" onSubmit={confirmarCompra}>
+                        <input onChange={({ target }) => setNombreApellido(target.value)} onKeyUp={habilitar} type="text" placeholder="Nombre y Apellido" required></input>
+                        <input onChange={({ target }) => setDNI(target.value)} onKeyUp={habilitar} type="number" placeholder="DNI o Cedula de identidad" required></input>
+                        <input onChange={({ target }) => setDireccion(target.value)} onKeyUp={habilitar} type="text" placeholder="Dirección de entrega" required></input>
+                        <input onChange={({ target }) => setCp(target.value)} onKeyUp={habilitar} type="number" placeholder="Código postal" required></input>
+                        <button type="submit" className="btn btn-dark" disabled={disable} data-bs-toggle="modal" data-bs-target="#exampleModal">Confirmar compra</button>
+                    </form>
+                </div>
+                :
                 <p></p>}
+            {/* Modal */}
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">¡Compra exitosa!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Su compra ha finalizado con éxito.
+                            ¡Muchas gracias por elegirnos {nombreApellido}!
+                            Pronto le llegará un mail con información de su pedido y entrega.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
