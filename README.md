@@ -18,5 +18,7 @@ El funcionamiento en sí de la pagina es bastante sencillo: la información en l
 
 Se adjunta video con un ejemplo del funcionamiento de la pagina, y el proyecto subido a GitHub (en funcionamiento).
 
+Video: https://screenrec.com/share/aYDRkHnxCj
+Proyecto andando en GitHub: https://alangimenez.github.io/libros
 
 Agradezco cualquier feedback adicional a los temas a mejorar que comentaba lineas arriba, y muchas gracias por todo! Alan.
